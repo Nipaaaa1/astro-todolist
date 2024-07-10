@@ -1,11 +1,8 @@
 import { db } from "../db"
+import type { DeleteTaskParams } from "./types/task-type"
 
-interface deleteTaskProps {
-  taskId: string
-}
-
-export const deleteTask = async ({ taskId }: deleteTaskProps) => {
-  await db.task.delete({
+export const deleteTask = async ({ taskId }: DeleteTaskParams) => {
+  return await db.task.delete({
     where: {
       id: taskId
     }
