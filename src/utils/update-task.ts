@@ -1,7 +1,7 @@
 import { db } from "../db"
 import type { UpdateTaskParams } from "./types/task-type"
 
-export const updateTask = async ({ taskId, taskTitle, taskCompletedStatus }: UpdateTaskParams) => {
+export const updateTask = async ({ taskId, title, completedStatus }: UpdateTaskParams) => {
   const currentTask = await db.task.findUnique({
     where: {
       id: taskId
@@ -13,8 +13,8 @@ export const updateTask = async ({ taskId, taskTitle, taskCompletedStatus }: Upd
       id: taskId
     },
     data: {
-      title: taskTitle ? taskTitle : currentTask?.title,
-      completedStatus: taskCompletedStatus ? taskCompletedStatus : currentTask?.completedStatus
+      title: title ? title : currentTask?.title,
+      completedStatus: completedStatus ? completedStatus : currentTask?.completedStatus
     }
   })
 }

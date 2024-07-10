@@ -1,7 +1,7 @@
 interface UpdateTaskParams {
   taskId: string,
-  taskTitle: string,
-  taskCompletedStatus: boolean
+  title: string,
+  completedStatus: boolean
 }
 
 interface DeleteTaskParams {
