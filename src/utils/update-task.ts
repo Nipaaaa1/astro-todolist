@@ -14,7 +14,7 @@ export const updateTask = async ({ taskId, title, completedStatus }: UpdateTaskP
     },
     data: {
       title: title ? title : currentTask?.title,
-      completedStatus: completedStatus ? completedStatus : currentTask?.completedStatus
+      completedStatus
     }
   })
 }
